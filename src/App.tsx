@@ -1,31 +1,29 @@
 import React from 'react';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {StudentList} from './components/StudentList/StudentList';
-import {useAppDispatch} from './hooks';
-import {
-    getStudentList
-} from './store/apiActions';
-import Header from "./components/Header/Header";
-
+import Layout from "./layouts/layout";
+import MainPage from './pages/main/MainPage';
+import NotFoundPage from './pages/notFound/NotFoundPage';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <StudentList/>,
+        element:
+            <Layout>
+                <MainPage/>
+            </Layout>,
     },
-
+    {
+        path: '*',
+        element:
+            <NotFoundPage/>
+        ,
+    },
 ]);
 
 function App() {
-    const dispatch = useAppDispatch();
-    dispatch(getStudentList(''));
     return (
-        <>
-            <Header/>
-            <RouterProvider router={router}/>
-        </>
+        <RouterProvider router={router}/>
     );
 }
 
-//<RouterProvider router={router}/>
 export default App;

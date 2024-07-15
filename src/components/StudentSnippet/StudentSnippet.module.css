@@ -1,0 +1,59 @@
+.student, .name, .speciality, .group, .age, .rating {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.student {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.name {
+    margin-left: 21px;
+    width: 300px;
+}
+
+.speciality {
+    margin-left: 20px;
+    width: 280px;
+}
+
+.group {
+    margin-left: 20px;
+    width: 80px;
+    text-transform: uppercase;
+}
+
+.age {
+    margin-left: 60px;
+    width: 80px;
+}
+
+.rating {
+    margin-left: 60px;
+    width: 80px;
+}
+
+.color {
+    margin-left: 22px;
+    border-radius: 50%;
+    min-width: 30px;
+    max-width: 30px;
+    height: 30px;
+}
+
+.button-delete {
+    margin-left: 21px;
+    min-width: 30px;
+    max-width: 30px;
+    height: 30px;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+    background-image: url("../../../public/delete.svg");
+}

@@ -16,3 +16,8 @@ export type Student = {
 export type State = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
+
+export type Sorting = {
+    byName: boolean,
+    byNameReverse: boolean, byAge: boolean, byAgeReverse: boolean, byRating: boolean, byRatingReverse: boolean
+}

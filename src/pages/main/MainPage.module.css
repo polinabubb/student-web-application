@@ -1,0 +1,18 @@
+.main {
+    margin-left: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 47px;
+    margin-top: 75px;
+}
+.title{
+    padding: 0;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
