@@ -1,6 +1,6 @@
 {
-  "name": "student-web-application",
-  "homepage": "https://polinabubb.github.io/student-web-application",
+  "name": "my-app",
+  "homepage": "https://polinabubb.github.io/Student-web-application",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +13,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "axios": "^1.7.2",
-    "classnames": "^2.5.m1",
+    "classnames": "^2.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
