@@ -20,11 +20,13 @@
     border: none;
     background-image: url("../../../public/sorting.svg");
 }
+
 @media screen and (max-width: 480px) {
     .name {
         display: none;
     }
-    .sorting{
-        gap:0;
+
+    .sorting {
+        gap: 0;
     }
 }
