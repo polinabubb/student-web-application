@@ -28,7 +28,7 @@
     --color-blue: #49C2E8;
     --color-black: #000000;
     --color-avatar-border: RGBA(255, 255, 255, 0.6);
-    --color-placeholder:#B3B3B3;
+    --color-placeholder:#B2B2B2;
 }
 
 ::-webkit-scrollbar {
@@ -39,7 +39,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;font-family: Geometria, sans-serif;
 }
 
 html,

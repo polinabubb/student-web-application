@@ -11,7 +11,7 @@ export function Avatar({src}: AvatarProps): JSX.Element {
             styles.circleAvatar,
             styles['circle-avatar'],
         )}>
-            <img alt="avatar" src={src} className={styles.avatar}/>
+            <img alt="avatar" src={src} loading="lazy" className={styles.avatar} width="40" height="40"/>
         </span>
     );
 }

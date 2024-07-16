@@ -17,7 +17,8 @@ export function Modal({onClickHandler, activeSorting}: ModalProps): JSX.Element 
                 {Object.entries(SortingMap).map(([key, name]) => (
                     <button key={key} className={key === activeSorting ? cn(styles.sorting__nameActive,
                         styles['sorting__name-active'],
-                    ) : styles.sorting__name} onClick={onClickHandler(key)}>
+                    ) : styles.sorting__name} onClick={onClickHandler(key)}
+                            aria-label="Выбрать сортировку">
                         {name}
                         {key === activeSorting &&
                             <svg width="10" height="8" viewBox="0 0 10 8" fill="none"

@@ -23,7 +23,7 @@ export function Search(): JSX.Element {
     }
     return (
         <form action="" method="get" className={styles.search} onSubmit={onSubmitHandler}>
-            <button type="submit" className={styles.button}></button>
+            <button type="submit" className={styles.button} aria-label="Искать"></button>
             <input className={styles.input} name="s" placeholder="Поиск по имени" type="search" ref={search}
                    onChange={onChangeHandler}/>
         </form>

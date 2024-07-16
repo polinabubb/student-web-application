@@ -37,7 +37,7 @@ export function Sorting(): JSX.Element {
                     {SortingMap[sortingName as SortingKeys]}
                 </div>
             }
-            <button className={styles.button} onClick={showModalHandler}>
+            <button className={styles.button} onClick={showModalHandler} aria-label="Смотреть сортировки">
             </button>
         </div>
     );

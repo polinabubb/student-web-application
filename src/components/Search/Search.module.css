@@ -30,3 +30,10 @@
     line-height: 20px;
     color: var(--color-placeholder);
 }
+
+@media screen and (max-width: 480px) {
+    .search {
+        gap: 16px;
+        margin-left: 20px;
+    }
+}

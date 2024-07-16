@@ -29,12 +29,7 @@
     text-transform: uppercase;
 }
 
-.age {
-    margin-left: 60px;
-    width: 80px;
-}
-
-.rating {
+.age, .rating {
     margin-left: 60px;
     width: 80px;
 }
@@ -59,7 +54,98 @@
 }
 
 @media screen and (max-width: 480px) {
+    .color, .rating, .age, .group, .speciality, .button-delete, .name {
+        margin-left: 0;
+    }
+
+    .student, .name, .speciality, .group, .age, .rating {
+        width: fit-content;
+    }
+
+    .student {
+        width: calc(100vw - 40px);
+        align-items: flex-start;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .color {
+        min-width: 12px;
+        max-width: 12px;
+        height: 12px;
+
+    }
+
     .name {
-        display: none;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .header {
+
+        border-bottom: 1px solid #e3e3e3;
+        padding-bottom: 14px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header__description {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+
+    }
+
+    .header__information {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .header__list {
+        display: flex;
+        flex-direction: row;
+        gap: 13px;
+        align-items: center;
+    }
+
+    .header__rating {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .rating {
+        font-size: 12px;
+    }
+
+    .main, .age, .speciality {
+        font-weight: 400;
+    }
+
+    .main {
+        margin-left: 60px;
+
+    }
+
+    .student ul {
+        line-height: 20px;
+    }
+
+    .student ul li {
+        font-size: 12px;
+        font-weight: 400;
+        padding-left: 13px;
+        background-image: url("../../../public/ul-marker.svg");
+        background-position: 0 50%;
+        background-size: 5px 5px;
+        background-repeat: no-repeat;
+        text-align: center;
     }
 }
