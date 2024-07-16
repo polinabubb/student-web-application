@@ -1,8 +1,5 @@
 import styles from './Modal.module.css';
-import {useEffect, useRef, useState} from "react";
-import {useAppDispatch} from "../../hooks";
 import {SortingMap} from "../../const";
-import {SortingType} from "../../types";
 import cn from "classnames";
 
 type ModalProps = {

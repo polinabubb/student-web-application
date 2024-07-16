@@ -34,6 +34,8 @@
 @media screen and (max-width: 480px) {
     .search {
         gap: 16px;
-        margin-left: 20px;
+    }
+    .input{
+        max-width: 140px;
     }
 }

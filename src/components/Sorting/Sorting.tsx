@@ -2,7 +2,6 @@ import styles from './Sorting.module.css';
 import {useState} from "react";
 import {useAppDispatch} from "../../hooks";
 import {sortingStudents} from '../../store/StudentData/StudentData';
-import {SortingType} from '../../types';
 import {InitialSorting, SortingKeys, SortingMap} from "../../const";
 import Modal from "../Modal/Modal";
 
@@ -11,9 +10,6 @@ export function Sorting(): JSX.Element {
     const [sortingName, setSortingName] = useState<string>('');
     const [isSortingActive, setIsSortingActive] = useState<boolean>(false);
     const dispatch = useAppDispatch();
-    const sortingHandler = (sorting: SortingType) => () => {
-        dispatch(sortingStudents({sorting: sorting}));
-    }
     const showModalHandler = () => {
         setNeedShowModal(!needShowModal);
     }

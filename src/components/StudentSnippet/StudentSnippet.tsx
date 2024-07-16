@@ -5,7 +5,7 @@ import Avatar from "../Avatar/Avatar";
 import {useAppDispatch} from "../../hooks";
 import {deleteStudent} from '../../store/StudentData/StudentData';
 import {useEffect, useState} from "react";
-
+import {useResize} from "../../hooks/useResize";
 type StudentSnippetProps = {
     student: Student;
 }
@@ -18,31 +18,16 @@ function countAge(date: string): number {
 
 export function StudentSnippet({student}: StudentSnippetProps): JSX.Element {
     const dispatch = useAppDispatch();
-    const [width, setWidth] = useState(window.innerWidth);
+    //const [width, setWidth] = useState(window.innerWidth);
+    const {width, isMobile} = useResize();
     const deleteHandler = (id: number) => () => {
         dispatch(deleteStudent({id: id}));
     }
-    useEffect(() => {
-        const handleResize = (event: UIEvent) => {
-            if (event.target) {
-                const w = event.target as Window;
-                setWidth(w.innerWidth);
-            }
-        };
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-    /*let width = window.innerWidth;
-    useEffect(() => {
-        width = window.innerWidth;
-    }, [window.innerWidth]);
 
-     */
-    if (width <= 480) {
+    if (true) {
+        //console.log(width);
         return (
-            <li className={styles.student}>
+            <div className={styles.student}>
                 <div className={styles.header}>
                     <div className={styles.header__information}>
                         <Avatar src={student.avatar}/>
@@ -87,38 +72,41 @@ export function StudentSnippet({student}: StudentSnippetProps): JSX.Element {
                     </li>
                 </ul>
 
+            </div>
+        );
+    }else{
+        //console.log(width);
+        return (
+            <li className={styles.student}>
+                <Avatar src={student.avatar}/>
+                <div className={styles.name}>
+                    {student.name}
+                </div>
+                <div className={styles.speciality}>
+                    {student.specialty}
+                </div>
+                <div className={styles.group}>
+                    {student.group}
+                </div>
+                <div className={styles.age}>
+                    {countAge(student.birthday)}
+                </div>
+                <div className={styles.rating}>
+                    {student.rating}
+                </div>
+                <div className={styles.color} style={{backgroundColor: student.color}}>
+
+                </div>
+                <button className={cn(
+                    styles.buttonDelete,
+                    styles['button-delete']
+                )} onClick={deleteHandler(student.id)} aria-label="Удалить студента">
+                </button>
             </li>
+
         );
     }
-    return (
-        <li className={styles.student}>
-            <Avatar src={student.avatar}/>
-            <div className={styles.name}>
-                {student.name}
-            </div>
-            <div className={styles.speciality}>
-                {student.specialty}
-            </div>
-            <div className={styles.group}>
-                {student.group}
-            </div>
-            <div className={styles.age}>
-                {countAge(student.birthday)}
-            </div>
-            <div className={styles.rating}>
-                {student.rating}
-            </div>
-            <div className={styles.color} style={{backgroundColor: student.color}}>
 
-            </div>
-            <button className={cn(
-                styles.buttonDelete,
-                styles['button-delete']
-            )} onClick={deleteHandler(student.id)} aria-label="Удалить студента">
-            </button>
-        </li>
-
-    );
 }
 
 export default StudentSnippet;

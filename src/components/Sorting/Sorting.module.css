@@ -24,4 +24,7 @@
     .name {
         display: none;
     }
+    .sorting{
+        gap:0;
+    }
 }

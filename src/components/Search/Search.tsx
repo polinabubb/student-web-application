@@ -1,5 +1,4 @@
 import styles from './Search.module.css';
-import cn from "classnames";
 import {useRef} from "react";
 import {useAppDispatch} from "../../hooks";
 import {filterStudents} from '../../store/StudentData/StudentData';
