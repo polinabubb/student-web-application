@@ -14,6 +14,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/student-web-application",
+    element: (
+        <Layout>
+          <MainPage />
+        </Layout>
+    ),
+  },
+  {
     path: "*",
     element: <NotFoundPage />,
   },
