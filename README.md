@@ -1,3 +1,6 @@
+# Проект разрещен на github-pages
+Билд находится в ветке gh-pages, ссылка на сайт сбоку в About
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
