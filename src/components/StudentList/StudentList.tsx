@@ -19,7 +19,7 @@ export function StudentList(): JSX.Element {
     }
     return (
         <div className={styles.students}>
-            <ul className={styles.title}>
+            <ul className={styles.titles}>
                 {[{name: 'ФИО', className: "name"},
                     {name: 'Специальность', className: "specialty"},
                     {name: 'Группа', className: "group"},

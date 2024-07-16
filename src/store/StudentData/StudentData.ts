@@ -1,10 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {NameSpace} from '../../const';
-import {Sorting, Student} from '../../types';
+import {SortingType, Student} from '../../types';
 import {PayloadAction} from '@reduxjs/toolkit';
 import {fetchStudentList} from '../apiActions';
 
 type StudentData = {
+    sortingStudents: Student[],
     displayedStudents: Student[],
     students: Student[],
     isStudentsLoading: boolean,
@@ -12,6 +13,7 @@ type StudentData = {
 };
 
 const initialState: StudentData = {
+    sortingStudents: [],
     displayedStudents: [],
     students: [],
     isStudentsLoading: false,
@@ -48,8 +50,9 @@ export const studentData = createSlice({
                 const {id} = action.payload;
                 state.students = DeleteStudentById(id, state.students);
                 state.displayedStudents = DeleteStudentById(id, state.displayedStudents);
+                state.sortingStudents = DeleteStudentById(id, state.sortingStudents);
             },
-            sortingStudents(state, action: PayloadAction<{ sorting: Sorting }>) {
+            sortingStudents(state, action: PayloadAction<{ sorting: SortingType }>) {
                 const {sorting} = action.payload;
                 let sortingFunction;
                 if (sorting.byName) {
@@ -57,23 +60,26 @@ export const studentData = createSlice({
                 } else if (sorting.byNameReverse) {
                     sortingFunction = (a: Student, b: Student) => -a.name.localeCompare(b.name);
                 } else if (sorting.byAge) {
-                    sortingFunction = (a: Student, b: Student) => new Date(a.birthday).getTime() - new Date(b.birthday).getTime();
-                } else if (sorting.byAgeReverse) {
                     sortingFunction = (a: Student, b: Student) => new Date(b.birthday).getTime() - new Date(a.birthday).getTime();
+                } else if (sorting.byAgeReverse) {
+                    sortingFunction = (a: Student, b: Student) => new Date(a.birthday).getTime() - new Date(b.birthday).getTime();
                 } else if (sorting.byRating) {
                     sortingFunction = (a: Student, b: Student) => a.rating - b.rating;
                 } else if (sorting.byRatingReverse) {
                     sortingFunction = (a: Student, b: Student) => b.rating - a.rating;
+                } else {
+                    state.displayedStudents = state.students;
+                    return;
                 }
-                state.students = state.students.sort(sortingFunction);
+                state.sortingStudents = state.sortingStudents.sort(sortingFunction);
                 state.displayedStudents = state.displayedStudents.sort(sortingFunction);
             },
             filterStudents(state, action: PayloadAction<{ name: string }>) {
                 const {name} = action.payload;
                 if (name === '') {
-                    state.displayedStudents = state.students;
+                    state.displayedStudents = state.sortingStudents;
                 } else {
-                    state.displayedStudents = state.displayedStudents.filter((student) => student.name.toLowerCase().includes(name.toLowerCase()));
+                    state.displayedStudents = state.sortingStudents.filter((student) => student.name.toLowerCase().includes(name.toLowerCase()));
                 }
             },
         },
@@ -88,6 +94,7 @@ export const studentData = createSlice({
                     if (data) {
                         state.students = data;
                         state.displayedStudents = data;
+                        state.sortingStudents = data;
                     } else {
                         state.hasError = true;
                     }
