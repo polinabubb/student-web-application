@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/student-web-application/static/css/main.752aa014.css",
+    "main.js": "/student-web-application/static/js/main.e40b1efc.js",
+    "static/media/Geometria-Regular.woff2": "/student-web-application/static/media/Geometria-Regular.914be1665d1d946c626c.woff2",
+    "static/media/Geometria-Medium.woff2": "/student-web-application/static/media/Geometria-Medium.8d57bf2f0682db5d7cb8.woff2",
+    "static/media/Geometria-Bold.woff2": "/student-web-application/static/media/Geometria-Bold.a1c6754de91a8a30c477.woff2",
+    "static/media/delete.svg": "/student-web-application/static/media/delete.efc4a565183ce38cbcc9.svg",
+    "index.html": "/student-web-application/index.html",
+    "static/media/sorting.svg": "/student-web-application/static/media/sorting.90660420e4c9d233bdf1.svg",
+    "static/media/search.svg": "/student-web-application/static/media/search.549c838b22b584b5f3f3.svg",
+    "static/media/ul-marker.svg": "/student-web-application/static/media/ul-marker.b4dada695ac2f6e2eb3b.svg",
+    "main.752aa014.css.map": "/student-web-application/static/css/main.752aa014.css.map",
+    "main.e40b1efc.js.map": "/student-web-application/static/js/main.e40b1efc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.752aa014.css",
+    "static/js/main.e40b1efc.js"
+  ]
+}
