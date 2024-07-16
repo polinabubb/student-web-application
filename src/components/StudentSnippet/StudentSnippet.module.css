@@ -1,4 +1,9 @@
-.student, .name, .speciality, .group, .age, .rating {
+.student,
+.name,
+.speciality,
+.group,
+.age,
+.rating {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -29,7 +34,8 @@
     text-transform: uppercase;
 }
 
-.age, .rating {
+.age,
+.rating {
     margin-left: 60px;
     width: 80px;
 }
@@ -54,11 +60,23 @@
 }
 
 @media screen and (max-width: 480px) {
-    .color, .rating, .age, .group, .speciality, .button-delete, .name {
+
+    .color,
+    .rating,
+    .age,
+    .group,
+    .speciality,
+    .button-delete,
+    .name {
         margin-left: 0;
     }
 
-    .student, .name, .speciality, .group, .age, .rating {
+    .student,
+    .name,
+    .speciality,
+    .group,
+    .age,
+    .rating {
         width: fit-content;
     }
 
@@ -125,7 +143,9 @@
         font-size: 12px;
     }
 
-    .main, .age, .speciality {
+    .main,
+    .age,
+    .speciality {
         font-weight: 400;
     }
 

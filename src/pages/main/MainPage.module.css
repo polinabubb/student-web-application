@@ -35,10 +35,14 @@
 
     .title {
         margin-left: 20px;
-    }.main {margin-top: 39px;
-         gap: 22px;
-     }
-     .container{
-         gap:10px;
-     }
+    }
+
+    .main {
+        margin-top: 39px;
+        gap: 22px;
+    }
+
+    .container {
+        gap: 10px;
+    }
 }
