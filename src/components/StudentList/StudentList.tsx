@@ -38,11 +38,14 @@ export function StudentList(): JSX.Element {
 
 
             </ul>
-            <ul className={styles.list}>
-                {students.map((student) => {
-                    return <StudentSnippet student={student} key={student.id}/>
-                })}
-            </ul>
+            {students.length === 0 ?
+                <div className={cn(styles.notFound, styles['not-found'])}> Ничего не найдено </div> :
+                <ul className={styles.list}>
+                    {students.map((student) => {
+                        return <StudentSnippet student={student} key={student.id}/>
+                    })}
+                </ul>}
+
 
         </div>
     );

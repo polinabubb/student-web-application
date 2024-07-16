@@ -16,10 +16,16 @@ export function Search(): JSX.Element {
             dispatch(filterStudents({name: ''}));
         }
     }
+    const onChangeHandler = () => {
+        if (!search.current || search.current.value === '') {
+            dispatch(filterStudents({name: ''}));
+        }
+    }
     return (
         <form action="" method="get" className={styles.search} onSubmit={onSubmitHandler}>
-            <button type="submit" className={styles.button}> </button>
-            <input className={styles.input} name="s" placeholder="Поиск по имени" type="search" ref={search}/>
+            <button type="submit" className={styles.button}></button>
+            <input className={styles.input} name="s" placeholder="Поиск по имени" type="search" ref={search}
+                   onChange={onChangeHandler}/>
         </form>
     );
 }

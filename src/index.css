@@ -1,3 +1,25 @@
+@font-face {
+    font-family: 'Geometria';
+    src: local('Geometria'),
+    url('./fonts/Geometria/Geometria-Bold.woff2') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Geometria';
+    src: local('Geometria'),
+    url('./fonts/Geometria/Geometria-Medium.woff2') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Geometria';
+    src: local('Geometria'),
+    url('./fonts/Geometria/Geometria-Regular.woff2') format('truetype');
+    font-weight: 400;
+}
+
+
 :root {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -6,6 +28,7 @@
     --color-blue: #49C2E8;
     --color-black: #000000;
     --color-avatar-border: RGBA(255, 255, 255, 0.6);
+    --color-placeholder:#B3B3B3;
 }
 
 ::-webkit-scrollbar {

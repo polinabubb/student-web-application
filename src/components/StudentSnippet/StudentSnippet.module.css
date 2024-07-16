@@ -57,3 +57,9 @@
     border: none;
     background-image: url("../../../public/delete.svg");
 }
+
+@media screen and (max-width: 480px) {
+    .name {
+        display: none;
+    }
+}

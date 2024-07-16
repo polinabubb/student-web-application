@@ -25,3 +25,9 @@
     gap: 20px;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 30px;
+    }
+}
