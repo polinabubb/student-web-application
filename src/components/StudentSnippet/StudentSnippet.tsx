@@ -4,7 +4,6 @@ import cn from "classnames";
 import Avatar from "../Avatar/Avatar";
 import {useAppDispatch} from "../../hooks";
 import {deleteStudent} from '../../store/StudentData/StudentData';
-import {useEffect, useState} from "react";
 import {useResize} from "../../hooks/useResize";
 type StudentSnippetProps = {
     student: Student;
@@ -18,14 +17,11 @@ function countAge(date: string): number {
 
 export function StudentSnippet({student}: StudentSnippetProps): JSX.Element {
     const dispatch = useAppDispatch();
-    //const [width, setWidth] = useState(window.innerWidth);
     const {width, isMobile} = useResize();
     const deleteHandler = (id: number) => () => {
         dispatch(deleteStudent({id: id}));
     }
-
-    if (true) {
-        //console.log(width);
+    if (isMobile) {
         return (
             <div className={styles.student}>
                 <div className={styles.header}>
@@ -75,7 +71,7 @@ export function StudentSnippet({student}: StudentSnippetProps): JSX.Element {
             </div>
         );
     }else{
-        //console.log(width);
+        console.log(width);
         return (
             <li className={styles.student}>
                 <Avatar src={student.avatar}/>

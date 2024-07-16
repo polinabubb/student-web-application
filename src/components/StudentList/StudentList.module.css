@@ -29,9 +29,7 @@
 }
 
 .students {
-    /*width: 1180px;
-
-     */
+    width: 1180px;
     display: flex;
     flex-direction: column;
     gap: 12px;
