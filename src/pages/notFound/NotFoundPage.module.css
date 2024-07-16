@@ -8,10 +8,3 @@
     justify-content: center;
     align-items: center;
 }
-
-@media screen and (max-width: 480px) {
-    .not-found {
-        font-size: 25px;
-        padding: 20px;
-    }
-}

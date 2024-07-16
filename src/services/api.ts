@@ -1,12 +1,14 @@
-import axios, { AxiosInstance } from "axios";
+import axios, {
+    AxiosInstance,
+} from 'axios';
 
-const BACKEND_URL = "https://front-assignment-api.2tapp.cc/api";
+const BACKEND_URL = 'https://front-assignment-api.2tapp.cc/api';
 const REQUEST_TIMEOUT = 5000;
 export const createAPI = (): AxiosInstance => {
-  const api = axios.create({
-    baseURL: BACKEND_URL,
-    timeout: REQUEST_TIMEOUT,
-  });
+    const api = axios.create({
+        baseURL: BACKEND_URL,
+        timeout: REQUEST_TIMEOUT,
+    });
 
-  return api;
+    return api;
 };
