@@ -23,17 +23,23 @@ export function StudentSnippet({student}: StudentSnippetProps): JSX.Element {
     return (
         <li className={styles.student}>
             <Avatar src={student.avatar}/>
-            {[{className: styles.name, name: student.name},
-                {className: styles.specialty, name: student.specialty},
-                {className: styles.group, name: student.group},
-                {className: styles.birthday, name: student.birthday},
-                {className: styles.rating, name: student.rating},
-            ].map(elem =>
-                <div className={elem.className}>
-                    {elem.name}
-                </div>
-            )}
+            <div className={styles.name}>
+                {student.name}
+            </div>
+            <div className={styles.speciality}>
+                {student.specialty}
+            </div>
+            <div className={styles.group}>
+                {student.group}
+            </div>
+            <div className={styles.age}>
+                {countAge(student.birthday)}
+            </div>
+            <div className={styles.rating}>
+                {student.rating}
+            </div>
             <div className={styles.color} style={{backgroundColor: student.color}}>
+
             </div>
             <button className={cn(
                 styles.buttonDelete,
@@ -46,3 +52,4 @@ export function StudentSnippet({student}: StudentSnippetProps): JSX.Element {
 }
 
 export default StudentSnippet;
+
